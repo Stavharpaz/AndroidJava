@@ -1,17 +1,21 @@
-package com.example.a23b_11345b_l07.Utilities;
+package com.example.project.Utilities;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 import com.bumptech.glide.Glide;
-import com.example.a23b_11345b_l07.R;
+
 
 public class ImageLoader {
 
     private static ImageLoader instance;
 
+
     private static Context appContext;
+
+    private static String commonImage;
 
     private ImageLoader(Context context){
         this.appContext = context;
@@ -21,17 +25,20 @@ public class ImageLoader {
         return instance;
     }
 
-    public static ImageLoader initImageLoader (Context context){
+    public static ImageLoader initImageLoader (Context context, String url){
         if (instance == null)
             instance = new ImageLoader(context);
+
+        commonImage = url;
+
         return instance;
     }
 
-    public void loadImage(String imageURL, ImageView imageView){
+    public void loadImage(AppCompatImageView imageView){
         Glide
                 .with(this.appContext)
-                .load(imageURL)
-                .placeholder(R.drawable.ic_launcher_background)
+                .load(commonImage)
+                .centerCrop()
                 .into(imageView);
     }
 
@@ -39,7 +46,8 @@ public class ImageLoader {
         Glide
                 .with(this.appContext)
                 .load(imageResource)
-                .placeholder(R.drawable.ic_launcher_background)
                 .into(imageView);
     }
+
+
 }

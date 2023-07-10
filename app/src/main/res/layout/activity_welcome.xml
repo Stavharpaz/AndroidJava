@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/lighterGreen"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".WelcomeActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+  />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome_button"
+        android:textAlignment="center"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="70dp"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        android:background="@color/white"
+
+        />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/survivors_button"
+        android:layout_width="320dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="@color/lightGreen"
+        android:text="@string/app_name"
+        android:textColor="@color/darkGreen"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_survivor_tolist"
+        android:textAlignment="center"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="400dp"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/add_surviver_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="460dp"
+        android:backgroundTint="@color/lightGreen"
+        android:text="@string/add_surviver_button"
+        android:textColor="@color/darkGreen"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volunteers_button_explain"
+        android:textAlignment="center"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="580dp"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/volunteers_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="640dp"
+        android:backgroundTint="@color/lightGreen"
+        android:text="@string/volunteers_button"
+        android:textColor="@color/darkGreen"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+</RelativeLayout>

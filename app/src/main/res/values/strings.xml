@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">I CARE</string>
+
+    //welcome
+    <string name="welcome_button">WELCOME</string>
+
+
+    <string name="add_survivor_tolist">To add survivor click here:</string>
+    <string name="add_surviver_button">ADD SURVIVOR</string>
+
+    <string name="volunteers_button_explain">Volunteers click here:</string>
+    <string name="volunteers_button">VOLUNTEERS</string>
+
+    //add survivor
+    <string name="add_name">Name:</string>
+    <string name="add_address">Address:</string>
+    <string name="add_phone">Phone:</string>
+    <string name="add_email" translatable="false">Email:</string>
+    <string name="add_id">ID:</string>
+    <string name="add_to_list">NEXT</string>
+    <string name="add_details">Please Insert details</string>
+    <string name="add_user">User:</string>
+
+
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="id">ID</string>
+    <string name="user">User</string>
+
+    //login survivor
+
+
+
+    //survivors activity
+    <string name="i_need">I NEED:</string>
+    <string name="hotmMeal">HOT MEAL</string>
+    <string name="groceries">GROCERIES</string>
+    <string name="medication">MEDICATION</string>
+    <string name="company">COMPANY</string>
+    <string name="clothes">CLOTHES</string>
+
+
+
+    <string name="add_request">Request: </string>
+    <string name="request">Request</string>
+
+    <string name="REQUEST_LIST">REQUEST LIST </string>
+    <string name="MY_REQUEST_LIST">MY REQUEST LIST</string>
+
+    <string name="logout">logout</string>
+
+
+   <!-- <string name="sur">MEDICATION</string>
+    <string name="company">COMPANY</string>
+    <string name="clothes">CLOTHES</string>-->
+</resources>

@@ -1,82 +1,68 @@
 package com.example.project;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
-import com.firebase.ui.auth.IdpResponse;
-import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.project.Adapters.RequestAdapter;
+import com.example.project.Interfaces.LoadDataCallback;
+import com.example.project.Models.Request;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayList;
 
-public class ManagerActivity extends AppCompatActivity {
+public class AssociationActivity extends AppCompatActivity {
+    private DataManager dataManager = new DataManager();
+    private RecyclerView recyclerView;
+    private RequestAdapter adapter;
+    private LinearLayoutManager linearLayoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null)
-            login();
-        else
-            moveToMainActivity(user);
+        setContentView(R.layout.volrequestlst);
+
+        recyclerView = findViewById(R.id.main_LST_volrequests);
+        adapter = new RequestAdapter();
+
+        linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
+
+        retrieveDataAndPopulateRecyclerView();
+
+        removeDataFromRecyclerView();
     }
 
-    private void login() {
-        // Choose authentication providers
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.PhoneBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build());
+    private void removeDataFromRecyclerView() {
+        adapter.setRequestCallback(request -> {
+            adapter.removeRequest(request);
+            dataManager.removeRequest(Request.VOL_REQUESTS, request.getid(), request.getRequest());
 
-// Create and launch sign-in intent
-        Intent signInIntent = AuthUI.getInstance()
-                .createSignInIntentBuilder()
-                .setAvailableProviders(providers)
-                .build();
-        signInLauncher.launch(signInIntent);
+        });
     }
 
-
-    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
-            new FirebaseAuthUIActivityResultContract(),
-            new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
-                @Override
-                public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-                    onSignInResult(result);
-                }
+    private void retrieveDataAndPopulateRecyclerView() {
+        dataManager.retrieveDataAndPopulateRecyclerView(adapter, new LoadDataCallback() {
+            @Override
+            public void onRequestsLoaded(ArrayList<Request> requestsList) {
+                adapter.setRequestLst(requestsList);
             }
-    );
 
-    private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
-        IdpResponse response = result.getIdpResponse();
-        if (result.getResultCode() == RESULT_OK) {
-            // Successfully signed in
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            // ...
-            moveToMainActivity(user);
-        } else {
-            // Sign in failed. If response is null the user canceled the
-            // sign-in flow using the back button. Otherwise check
-            // response.getError().getErrorCode() and handle the error.
-            // ...
-            Toast.makeText(this,"Unsuccessful Login!", Toast.LENGTH_SHORT).show();
-        }
+            @Override
+            public void onRequestsLoadError(String errorMessage) {
+                Toast.makeText(AssociationActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    private void moveToMainActivity(FirebaseUser user) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("username", user.getDisplayName());
-        startActivity(intent);
-        finish();
-    }
+
+
+
 }
+

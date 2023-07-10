@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighterGreen"
+
+    tools:context=".AddSurActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/add_details"
+        android:textAlignment="center"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="@color/white"
+
+        />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentStart="true"
+        android:text="@string/add_name"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="150dp"
+        android:textStyle="bold"
+        android:background="@color/white"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/name_text"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/name"
+        android:layout_marginTop="140dp"
+        android:textColor="@color/darkGreen"
+        android:textColorHint="@color/darkGreen"
+        android:background="@color/white"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:hint="@string/name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/add_address"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="250dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@color/white"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/address_text"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="240dp"
+        android:layout_toEndOf="@id/address"
+        android:textColor="@color/darkGreen"
+        android:textStyle="italic"
+        android:textColorHint="@color/darkGreen"
+        android:background="@color/white"
+        android:textSize="20sp"
+        android:hint="@string/address" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/phone_text"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_toEndOf="@id/phone"
+        android:layout_marginTop="340dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColorHint="@color/darkGreen"
+        android:hint="@string/phone"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:background="@color/white"
+        android:textColor="@color/darkGreen" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="@string/add_phone"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="350dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@color/white"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/mail_text"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_toEndOf="@id/emale"
+        android:layout_marginTop="440dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/darkGreen"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:textColorHint="@color/darkGreen"
+        android:background="@color/white"
+        android:hint="@string/email" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/emale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_email"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="450dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@color/white"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/id_text"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_toEndOf="@id/id"
+        android:layout_marginTop="540dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColorHint="@color/darkGreen"
+        android:textColor="@color/darkGreen"
+        android:background="@color/white"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:hint="@string/id" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_id"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/darkGreen"
+        android:layout_marginTop="550dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@color/white"
+        />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/next_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="640dp"
+        android:backgroundTint="@color/lightGreen"
+        android:text="@string/add_to_list"
+        android:textColor="@color/darkGreen"
+        android:textSize="22sp" />
+
+
+
+
+</RelativeLayout>

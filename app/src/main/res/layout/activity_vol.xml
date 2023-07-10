@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".VolActivity"
+    android:background="@color/lighterGreen">
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:layout_height="35dp"
+            android:textAlignment="center"
+            android:text="@string/REQUEST_LIST"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/FRAME_requestLst"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/lighterGreen"
+        android:padding="20dp"
+        />
+    <LinearLayout
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:layout_height="35dp"
+            android:textAlignment="center"
+            android:text="@string/MY_REQUEST_LIST"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/FRAME_My_requestLst"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/lighterGreen"
+        android:padding="20dp"
+        />
+
+
+
+</LinearLayout>
